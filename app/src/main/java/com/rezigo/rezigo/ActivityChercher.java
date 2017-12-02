@@ -1,23 +1,53 @@
 package com.rezigo.rezigo;
 
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+
+import com.firebase.client.Firebase;
+
 
 public class ActivityChercher extends AppCompatActivity implements View.OnClickListener{
+
+
+
+    private ImageButton searchBtn;
+    private EditText searchField;
+    private Firebase mTrajetsRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chercher);
+        Firebase.setAndroidContext(this);
+
+        mTrajetsRef = new Firebase("https://rezigo-f51a7.firebaseio.com/Trajets");
+        searchBtn = (ImageButton) findViewById(R.id.searchBtn);
+        searchField = (EditText)  findViewById(R.id.inputSearch);
+
+        searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String keyword = searchField.getText().toString();
+
+
+            }
+        });
+
+
     }
 
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.button_rechercher :
+            case R.id.searchBtn :
                 startActivityList();
                 break;
             case R.id.button_info :

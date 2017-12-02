@@ -52,11 +52,11 @@
                     tools:layout_editor_absoluteY="174dp" />
 
                 <AutoCompleteTextView
-                    android:id="@+id/autoCompleteTextView9"
+                    android:id="@+id/username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="remplissez-moi"
+                    android:hint="Name"
                     android:textColor="@color/colorPrimary"
                     android:textSize="14sp" />
             </TableRow>
@@ -75,11 +75,11 @@
                     tools:layout_editor_absoluteY="0dp" />
 
                 <AutoCompleteTextView
-                    android:id="@+id/autoCompleteTextView10"
+                    android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="remplissez-moi"
+                    android:hint="Password"
                     android:textColor="@color/colorPrimary"
                     android:textSize="14sp" />
             </TableRow>
@@ -104,11 +104,10 @@
                     tools:layout_editor_absoluteY="226dp" />
 
                 <AutoCompleteTextView
-                    android:id="@+id/autoCompleteTextView"
+                    android:id="@+id/mBolide"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="remplissez-moi"
                     android:textColor="@color/colorPrimary"
                     android:textSize="14sp" />
 
@@ -126,11 +125,10 @@
                     android:text="Marque du bolide :" />
 
                 <AutoCompleteTextView
-                    android:id="@+id/autoCompleteTextView2"
+                    android:id="@+id/marqueBolide"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="remplissez-moi"
                     android:textColor="@color/colorPrimary"
                     android:textSize="14sp" />
 
@@ -148,11 +146,10 @@
                     android:text="Consommation:" />
 
                 <AutoCompleteTextView
-                    android:id="@+id/autoCompleteTextView3"
+                    android:id="@+id/conso"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="remplissez-moi"
                     android:textColor="@color/colorPrimary"
                     android:textSize="14sp" />
 
@@ -170,11 +167,10 @@
                     android:text="Essence ou diesel ?" />
 
                 <AutoCompleteTextView
-                    android:id="@+id/autoCompleteTextView4"
+                    android:id="@+id/carbu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="remplissez-moi"
                     android:textColor="@color/colorPrimary"
                     android:textSize="14sp" />
 
@@ -194,11 +190,10 @@
                     tools:layout_editor_absoluteY="128dp" />
 
                 <AutoCompleteTextView
-                    android:id="@+id/autoCompleteTextView5"
+                    android:id="@+id/comment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="remplissez-moi"
                     android:textColor="@color/colorPrimary"
                     android:textSize="14sp" />
 
@@ -209,7 +204,7 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/modifProfil"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="1"

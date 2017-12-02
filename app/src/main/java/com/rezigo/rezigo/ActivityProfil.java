@@ -12,12 +12,15 @@ import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Map;
 
 public class ActivityProfil extends AppCompatActivity {
 
     private Button modifierProfil;
+    private Button logoutBtn;
     private EditText nameField;
     private EditText passField;
     private EditText modelField;
@@ -33,6 +36,8 @@ public class ActivityProfil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
         Firebase.setAndroidContext(this);
+        logoutBtn = (Button) findViewById(R.id.logoutBtn);
+
         mUsername = (TextView) findViewById(R.id.username);
         mPass = (TextView) findViewById(R.id.password);
         mModel = (TextView) findViewById(R.id.mBolide);
@@ -60,6 +65,15 @@ public class ActivityProfil extends AppCompatActivity {
                 childPass.setValue(Password);
                 childModel.setValue(Model);
                 childBrand.setValue(Brand);
+            }
+        });
+        logoutBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                FirebaseAuth auth = FirebaseAuth.getInstance();
+                auth.signOut();
+                finish();
+                startActivityLogin();
             }
         });
         mProfileRef.addValueEventListener(new ValueEventListener() {
@@ -91,7 +105,7 @@ public class ActivityProfil extends AppCompatActivity {
                 startActivityInformation();
                 break;
             case R.id.button_home :
-                // startHomeActivity();
+                startHomeActivity();
                 finish();
                 break;
             case R.id.button_maps:
@@ -101,6 +115,10 @@ public class ActivityProfil extends AppCompatActivity {
             case R.id.button_leave :
                 finish();
                 startActivityLeave();
+                break;
+            case R.id.logoutBtn :
+                finish();
+                startActivityLogin();
                 break;
         }
     }
@@ -116,5 +134,13 @@ public class ActivityProfil extends AppCompatActivity {
         Intent intent = new Intent(ActivityProfil.this, ActivityMaps.class);
         startActivity(intent);
     }
-}
 
+    private void startHomeActivity() {
+        Intent intent = new Intent(ActivityProfil.this, HomeActivity.class);
+        startActivity(intent);
+    }
+    private void startActivityLogin() {
+        Intent intent = new Intent(ActivityProfil.this, ActivityLogin.class);
+        startActivity(intent);
+    }
+}

@@ -44,7 +44,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.button_profil :
-                startActivityProfil();
+                startActivityLogin();
                 break;
         }
     }
@@ -73,6 +73,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
     private void startActivityProfil() {
         Intent intent = new  Intent(HomeActivity.this, ActivityProfil.class);
+        startActivity(intent);
+    }
+    private void startActivityLogin() {
+        Intent intent = new  Intent(HomeActivity.this, ActivityLogin.class);
         startActivity(intent);
     }
 }
